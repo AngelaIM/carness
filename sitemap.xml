@@ -3,7 +3,7 @@
 
   <!-- 메인 글 목록 페이지 -->
   <url>
-    <loc>https://carness.netlify.app/</loc>
+    <loc>https://carness-car.netlify.app/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- 포스트 페이지 — 새 글 추가할 때마다 아래 형식으로 추가 -->
   <url>
-    <loc>https://carness.netlify.app/post-template.html</loc>
+    <loc>https://carness-car.netlify.app/post-template.html</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +19,7 @@
 
   <!-- 예시: 새 글 추가 시 아래처럼 복사해서 붙여넣기
   <url>
-    <loc>https://carness.netlify.app/post-interior-cleaner.html</loc>
+    <loc>https://carness-car.netlify.app/post-interior-cleaner.html</loc>
     <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
