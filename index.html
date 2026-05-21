@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카네스 — 카샴푸·실내세정제·디테일링 사용후기 모음</title>
+  <meta name="description" content="카네스 차량용 세정제 제품별 사용후기를 모아볼 수 있는 공간입니다. 카샴푸, 실내세정제, 유리막코팅제 등 디테일링 용품의 솔직한 후기를 확인하세요.">
+  <meta name="keywords" content="카샴푸, 카샴푸추천, 실내세정제, 디테일링, 세차, 카네스, 차량세정제, 유리막코팅, 거품세차">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* 브랜드 3색 */
+      --mint:           #dfede2;
+      --lavender:       #e9e9f5;
+      --neutral:        #f5f5f2;
+
+      /* 파생 진한 톤 */
+      --mint-dark:      #2e5e40;
+      --mint-hover:     #3d7550;
+      --lav-dark:       #4c4a8a;
+      --footer-bg:      #1e1d35;
+
+      /* 텍스트 */
+      --text:           #2d2d2d;
+      --text-meta:      #5f5f78;
+      --text-light:     #9898b5;
+
+      /* 테두리 */
+      --border:         #d4d4ec;
+
+      --bg-white:       #ffffff;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      background: var(--neutral);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== Top Bar ===== */
+    .top-bar {
+      background: var(--mint-dark);
+      color: #fff;
+      font-size: 13px;
+      text-align: center;
+      padding: 9px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .top-bar a {
+      color: #fff;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(255,255,255,0.6);
+      padding-bottom: 1px;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: var(--lavender);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { display: flex; flex-direction: column; gap: 1px; }
+    .logo-name { font-size: 20px; font-weight: 700; color: var(--mint-dark); letter-spacing: -0.5px; line-height: 1.2; }
+    .logo-sub  { font-size: 10.5px; color: var(--text-meta); }
+    .header-btns { display: flex; gap: 8px; align-items: center; }
+    .btn-store {
+      background: var(--mint-dark);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+    .btn-store:hover { background: var(--mint-hover); }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: var(--mint);
+      padding: 60px 20px 52px;
+      text-align: center;
+    }
+    .hero-inner { max-width: 720px; margin: 0 auto; }
+    .hero h1 {
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--mint-dark);
+      line-height: 1.4;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+    .hero p {
+      font-size: 16px;
+      color: var(--text-meta);
+      margin-bottom: 28px;
+      word-break: keep-all;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--mint-dark);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 30px;
+      border-radius: 30px;
+      transition: transform 0.15s, background 0.2s;
+    }
+    .hero-cta:hover { background: var(--mint-hover); transform: translateY(-2px); }
+
+    /* ===== Category Filter ===== */
+    .category-bar {
+      background: var(--lavender);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+      position: sticky;
+      top: 62px;
+      z-index: 90;
+    }
+    .category-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 12px 0;
+    }
+    .category-bar-inner::-webkit-scrollbar { display: none; }
+    .cat-btn {
+      flex-shrink: 0;
+      padding: 7px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text-meta);
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .cat-btn:hover, .cat-btn.active {
+      background: var(--mint-dark);
+      color: #fff;
+      border-color: var(--mint-dark);
+    }
+
+    /* ===== Post Grid ===== */
+    .posts-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    .posts-section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--mint-dark);
+      margin-bottom: 24px;
+    }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    /* Post Card */
+    .post-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: block;
+    }
+    .post-card:hover {
+      box-shadow: 0 8px 26px rgba(46,94,64,0.13);
+      transform: translateY(-4px);
+    }
+    .post-card-thumb {
+      height: 200px;
+      background: linear-gradient(135deg, var(--lavender) 0%, var(--mint) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-meta);
+      font-size: 13px;
+      overflow: hidden;
+      position: relative;
+    }
+    .post-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+      border-radius: 0;
+    }
+    .post-card-thumb .card-thumb-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.6;
+    }
+    .post-card-thumb .card-thumb-placeholder span:first-child { font-size: 36px; }
+    .post-card-body { padding: 18px 20px 20px; }
+    .post-card-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--lav-dark);
+      background: var(--lavender);
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .post-card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.55;
+      margin-bottom: 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: keep-all;
+    }
+    .post-card-excerpt {
+      font-size: 13.5px;
+      color: var(--text-meta);
+      line-height: 1.65;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: keep-all;
+    }
+    .post-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .post-card-date { font-size: 12px; color: var(--text-light); }
+    .post-card-more {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--mint-dark);
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    /* ===== CTA Banner ===== */
+    .cta-banner {
+      background: var(--mint);
+      border-top: 1px solid #c4d9c9;
+      border-bottom: 1px solid #c4d9c9;
+      padding: 52px 20px;
+      text-align: center;
+      margin: 0 0 0;
+    }
+    .cta-banner-inner { max-width: 600px; margin: 0 auto; }
+    .cta-banner h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--mint-dark);
+      margin-bottom: 12px;
+      word-break: keep-all;
+    }
+    .cta-banner p {
+      font-size: 15px;
+      color: var(--text-meta);
+      margin-bottom: 28px;
+      word-break: keep-all;
+    }
+    .cta-banner-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .cta-banner-btn-primary {
+      display: inline-block;
+      background: var(--mint-dark);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-banner-btn-primary:hover { background: var(--mint-hover); transform: translateY(-2px); }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--footer-bg);
+      color: #8a9eb5;
+      padding: 44px 20px 28px;
+      text-align: center;
+    }
+    .footer-inner { max-width: 800px; margin: 0 auto; }
+    .footer-logo { font-size: 19px; font-weight: 700; color: var(--lavender); margin-bottom: 8px; }
+    .footer-desc { font-size: 13.5px; margin-bottom: 18px; line-height: 1.7; color: #7a8fa5; }
+    .footer-store-link {
+      display: inline-block;
+      color: var(--mint);
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(223,237,226,0.4);
+      padding-bottom: 2px;
+    }
+    .footer-copy { font-size: 12px; margin-top: 24px; color: #3a3a55; }
+
+    /* ===== Floating Button ===== */
+    .floating-wrap { position: fixed; bottom: 28px; right: 24px; z-index: 200; }
+    .floating-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--mint-dark);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 4px 18px rgba(30,61,42,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .floating-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 26px rgba(30,61,42,0.4); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 26px; }
+    }
+    @media (max-width: 560px) {
+      .posts-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 22px; }
+      .cta-banner h2 { font-size: 20px; }
+      .floating-btn .floating-label { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Top Bar ===== -->
+  <div class="top-bar">
+    🛒 카네스 공식 스마트스토어 운영 중 —
+    <a href="https://smartstore.naver.com/carness" target="_blank" rel="noopener">제품 보러가기 →</a>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="/index.html">
+        <span class="logo-name">카네스</span>
+        <span class="logo-sub">차량용 세정제 전문 브랜드</span>
+      </a>
+      <div class="header-btns">
+        <a class="btn-store" href="https://smartstore.naver.com/carness" target="_blank" rel="noopener">🛒 쇼핑몰 바로가기</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>카샴푸·실내세정제·디테일링<br>카네스 제품 사용후기 모음</h1>
+      <p>직접 써본 솔직한 후기를 모아두었습니다. 세차와 디테일링이 더 쉬워집니다.</p>
+      <a class="hero-cta" href="https://smartstore.naver.com/carness" target="_blank" rel="noopener">🛒 스마트스토어에서 구매하기</a>
+    </div>
+  </section>
+
+  <!-- ===== Category Filter ===== -->
+  <nav class="category-bar" aria-label="카테고리 필터">
+    <div class="category-bar-inner">
+      <button class="cat-btn active" onclick="filterCategory(this, 'all')">전체</button>
+      <button class="cat-btn" onclick="filterCategory(this, '카샴푸')">카샴푸</button>
+      <button class="cat-btn" onclick="filterCategory(this, '실내세정제')">실내세정제</button>
+      <button class="cat-btn" onclick="filterCategory(this, '디테일링')">디테일링</button>
+      <button class="cat-btn" onclick="filterCategory(this, '세차')">세차</button>
+      <button class="cat-btn" onclick="filterCategory(this, '코팅제')">코팅제</button>
+    </div>
+  </nav>
+
+  <!-- ===== Posts Grid ===== -->
+  <section class="posts-section">
+    <p class="posts-section-title">📝 최신 사용후기</p>
+    <div class="posts-grid" id="posts-grid">
+
+      <!-- 포스트 카드 1 -->
+      <a class="post-card" href="post-template.html" data-category="카샴푸">
+        <div class="post-card-thumb">
+          <!-- <img src="썸네일경로" alt="카네스 카샴푸 거품세차 후기"> -->
+          <div class="card-thumb-placeholder"><span>🚿</span><span>카샴푸 후기</span></div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-badge">카샴푸</div>
+          <div class="post-card-title">카네스 카샴푸 거품세차 솔직 후기 — 세정력과 광택 효과까지 한번에</div>
+          <div class="post-card-excerpt">거품세차 마니아가 직접 테스트한 카네스 카샴푸 후기. 거품력, 세정력, 광택 효과까지 꼼꼼히 확인해봤습니다.</div>
+          <div class="post-card-footer">
+            <span class="post-card-date">2026-05-20</span>
+            <span class="post-card-more">자세히 보기 →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 포스트 카드 2 -->
+      <a class="post-card" href="#" data-category="실내세정제">
+        <div class="post-card-thumb">
+          <div class="card-thumb-placeholder"><span>🪑</span><span>실내세정제 후기</span></div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-badge">실내세정제</div>
+          <div class="post-card-title">카네스 실내세정제로 대시보드·시트 한번에 클리닝한 후기</div>
+          <div class="post-card-excerpt">실내 세정제 하나로 대시보드, 도어트림, 가죽시트까지 깔끔하게 정리했습니다. 사용법과 효과를 사진과 함께 공유합니다.</div>
+          <div class="post-card-footer">
+            <span class="post-card-date">2026-05-15</span>
+            <span class="post-card-more">자세히 보기 →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 포스트 카드 3 -->
+      <a class="post-card" href="#" data-category="디테일링">
+        <div class="post-card-thumb">
+          <div class="card-thumb-placeholder"><span>✨</span><span>디테일링 후기</span></div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-badge">디테일링</div>
+          <div class="post-card-title">카네스 유리막코팅제 직접 시공 후기 — 3개월 지속 효과 검증</div>
+          <div class="post-card-excerpt">카네스 유리막코팅제를 셀프 시공해봤습니다. 발림성, 광택, 발수 효과와 3개월 후 유지 상태까지 솔직하게 전달드립니다.</div>
+          <div class="post-card-footer">
+            <span class="post-card-date">2026-05-08</span>
+            <span class="post-card-more">자세히 보기 →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 포스트 카드 4 -->
+      <a class="post-card" href="#" data-category="세차">
+        <div class="post-card-thumb">
+          <div class="card-thumb-placeholder"><span>🚗</span><span>세차 후기</span></div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-badge">세차</div>
+          <div class="post-card-title">셀프 세차장에서 카네스 카샴푸 써봤습니다 — 전후 비교 포함</div>
+          <div class="post-card-excerpt">셀프 세차장에서 카네스 카샴푸를 사용한 후기입니다. 세차 전후 사진과 함께 실제 세정 효과를 확인해보세요.</div>
+          <div class="post-card-footer">
+            <span class="post-card-date">2026-04-29</span>
+            <span class="post-card-more">자세히 보기 →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 포스트 카드 5 -->
+      <a class="post-card" href="#" data-category="카샴푸">
+        <div class="post-card-thumb">
+          <div class="card-thumb-placeholder"><span>🫧</span><span>카샴푸 비교</span></div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-badge">카샴푸</div>
+          <div class="post-card-title">카네스 카샴푸 vs 타사 비교 — 거품력·세정력 직접 실험</div>
+          <div class="post-card-excerpt">시중의 인기 카샴푸와 카네스를 직접 비교해봤습니다. 동일 조건에서 거품량, 지속력, 세정 후 잔여물까지 꼼꼼히 테스트했습니다.</div>
+          <div class="post-card-footer">
+            <span class="post-card-date">2026-04-18</span>
+            <span class="post-card-more">자세히 보기 →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 포스트 카드 6 -->
+      <a class="post-card" href="#" data-category="코팅제">
+        <div class="post-card-thumb">
+          <div class="card-thumb-placeholder"><span>🛞</span><span>타이어코팅 후기</span></div>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-badge">코팅제</div>
+          <div class="post-card-title">카네스 타이어코팅제 사용법과 지속력 — 광택+보호 한번에</div>
+          <div class="post-card-excerpt">타이어도 관리가 필요합니다. 카네스 타이어코팅제로 광택과 보호를 동시에 잡는 방법, 실제 사용 후기와 함께 소개합니다.</div>
+          <div class="post-card-footer">
+            <span class="post-card-date">2026-04-10</span>
+            <span class="post-card-more">자세히 보기 →</span>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /posts-grid -->
+  </section>
+
+  <!-- ===== CTA Banner ===== -->
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>카네스 제품, 지금 바로 만나보세요</h2>
+      <p>카샴푸, 실내세정제, 유리막코팅제, 디테일링 용품 — 차량 관리의 모든 것을 카네스 하나로.</p>
+      <div class="cta-banner-btns">
+        <a class="cta-banner-btn-primary" href="https://smartstore.naver.com/carness" target="_blank" rel="noopener">🛒 스마트스토어 바로가기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">카네스 CARNESS</div>
+      <div class="footer-desc">
+        차량용 세정제 전문 브랜드<br>
+        카샴푸 · 실내세정제 · 유리막코팅제 · 디테일링 용품
+      </div>
+      <a class="footer-store-link" href="https://smartstore.naver.com/carness" target="_blank" rel="noopener">
+        🛒 네이버 스마트스토어 바로가기
+      </a>
+      <div class="footer-copy">© 2026 카네스 CARNESS. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ===== Floating Button ===== -->
+  <div class="floating-wrap">
+    <a class="floating-btn" href="https://smartstore.naver.com/carness" target="_blank" rel="noopener">
+      🛒 <span class="floating-label">스마트스토어 바로가기</span>
+    </a>
+  </div>
+
+  <script>
+    function filterCategory(btn, category) {
+      // 버튼 active 상태 변경
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // 카드 필터링
+      const cards = document.querySelectorAll('.post-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
