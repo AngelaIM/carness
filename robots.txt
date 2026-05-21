@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 사이트맵 위치 (내아이디를 실제 GitHub 아이디로 변경)
+Sitemap: https://carness.netlify.app/sitemap.xml

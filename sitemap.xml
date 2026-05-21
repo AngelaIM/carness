@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 메인 글 목록 페이지 -->
+  <url>
+    <loc>https://carness.netlify.app/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 포스트 페이지 — 새 글 추가할 때마다 아래 형식으로 추가 -->
+  <url>
+    <loc>https://carness.netlify.app/post-template.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 예시: 새 글 추가 시 아래처럼 복사해서 붙여넣기
+  <url>
+    <loc>https://carness.netlify.app/post-interior-cleaner.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+</urlset>
